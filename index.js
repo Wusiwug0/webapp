@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello Reyan Reddy World!');
+  res.send('Hello America, Please dont vote for hilary!');
 });
 
 app.listen(8080, function () {
