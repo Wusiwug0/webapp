@@ -15,6 +15,7 @@ node('master') {
        stage 'Test'
 
             echo 'test'
+            sh 'node -v' 
 
        stage 'Deploy'
 
