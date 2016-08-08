@@ -7,9 +7,6 @@ node('node') {
 
     try {
 
-       stage 'Checkout'
-
-            print "Git Checkout"m
 
        stage 'Test'
 
