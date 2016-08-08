@@ -23,7 +23,7 @@ node('master') {
             dir('/var/adm/webapp') {
             // some block
             } 
-            sh 'git pull'
+            git pull
             sh 'pm2 restart all'  
 
        stage 'Cleanup'
