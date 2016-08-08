@@ -16,6 +16,7 @@ node('master') {
 
             echo 'test'
             sh 'node -v' 
+            sh returnStdout: true, script: 'curl -I 54.149.59.2:8080'
 
        stage 'Deploy'
 
@@ -24,6 +25,7 @@ node('master') {
             sh 'git pull'
             } 
             sh 'pm2 restart all'  
+            sh returnStatus: true, script: 'curl -I 54.149.59.2:8080'
 
        stage 'Cleanup'
 
