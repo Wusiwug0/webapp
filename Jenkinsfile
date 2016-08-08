@@ -10,7 +10,7 @@ node('master') {
 
        stage 'Checkout'
 
-            echo 'checkout'm
+            echo 'checkout'
 
        stage 'Test'
 
