@@ -37,6 +37,7 @@ node('master') {
 
     catch (err) {
 
+        sh returnStatus: true, script: 'curl -I 54.149.59.2:8080'
         currentBuild.result = "FAILURE"
 
 
