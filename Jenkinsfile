@@ -9,7 +9,7 @@ node('node') {
 
        stage 'Checkout'
 
-            checkout scm
+            print "Git Checkout"m
 
        stage 'Test'
 
@@ -18,24 +18,21 @@ node('node') {
             print "Environment will be : ${env.NODE_ENV}"
 
             sh 'node -v'
-            sh 'npm prune'
             sh 'npm install'
 
 
        stage 'Deploy'
 
             echo 'Push to Repo'
+            cd /var/adm/webapp
             pm2 stop index.js
-            git url: 'https://github.com/Wusiwug0/webapp/'		
             git pull
             pm2 start index.js
 
 
        stage 'Cleanup'
 
-            echo 'prune and cleanup'
-            sh 'npm prune'
-            #sh 'rm node_modules -rf'
+            echo ' cleanup'
 
             mail body: 'project build successful',
                         from: 'xxxx@yyyyy.com',
