@@ -20,7 +20,10 @@ node('master') {
        stage 'Deploy'
 
             echo 'Push to webservero'
-            sh 'cd /var/adm/webapp; git pull'
+            dir('/var/adm/webapp') {
+            // some block
+            } 
+            sh 'git pull'
             sh 'pm2 restart all'  
 
        stage 'Cleanup'
