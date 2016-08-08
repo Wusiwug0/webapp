@@ -21,7 +21,7 @@ node('master') {
 
             echo 'Push to webservero'
             dir('/var/adm/webapp') {
-            git pull
+            sh 'git pull'
             } 
             sh 'pm2 restart all'  
 
