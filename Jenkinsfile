@@ -20,9 +20,8 @@ node('master') {
        stage 'Deploy'
 
             echo 'Push to webservero'
-            sh returnStatus: true, script: 'pm2 stop index.js’ 
             sh 'cd /var/adm/webapp; git pull'
-            sh returnStatus: true, script: 'pm2 start index.js’ 
+            sh 'pm2 restart all'  
 
        stage 'Cleanup'
 
