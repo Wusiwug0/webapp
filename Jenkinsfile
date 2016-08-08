@@ -21,9 +21,8 @@ node('master') {
 
             echo 'Push to webservero'
             dir('/var/adm/webapp') {
-            // some block
-            } 
             git pull
+            } 
             sh 'pm2 restart all'  
 
        stage 'Cleanup'
