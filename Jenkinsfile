@@ -26,7 +26,7 @@ node('master') {
             } 
             sh 'pm2 restart all'  
             sleep 10
-            sh returnStatus: true, script: 'curl -I 54.149.59.2:8090'
+            sh returnStatus: true, script: 'curl -I 54.149.59.2:8080'
 
        stage 'Cleanup'
 
