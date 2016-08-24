@@ -1,2 +1,2 @@
 # webapp
-Web App project
+Web App project for demo
